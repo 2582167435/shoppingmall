@@ -40,5 +40,6 @@
     </table>
 </form>
 <div style="color: red" align="center">*为必填项目</div>
+<div style="color: red" align="center" >${sessionScope.registerError}</div>
 </body>
 </html>

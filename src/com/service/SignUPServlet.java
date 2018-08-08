@@ -23,7 +23,7 @@ public class SignUPServlet extends HttpServlet {
         if (flag){
             response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
         }else {
-            request.getSession().setAttribute("LoginError","注册失败");
+            request.getSession().setAttribute("registerError","注册失败");
             response.sendRedirect(request.getContextPath()+"/page/SignUp.jsp");
         }
 

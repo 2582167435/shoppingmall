@@ -88,7 +88,27 @@ public class UserDao {
         return false;
     }
 
-
+    public boolean updateUser(User user,String uName){
+        String sql = "ALTER  users SET u_password = ?WHERE u_name = ?";
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,user.getuPassword());
+            preparedStatement.setString(2,uName);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (null != preparedStatement){
+                    preparedStatement.close();}
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 
 
     public boolean checkExist(String uName){
