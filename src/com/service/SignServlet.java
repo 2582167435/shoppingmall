@@ -13,6 +13,7 @@ import java.io.IOException;
 @WebServlet(name = "SignServlet",urlPatterns = "/SignServlet")
 public class SignServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.setCharacterEncoding("UTF-8");
         String signType = request.getParameter("sign");
         UserDao userDao = new UserDao();
@@ -28,6 +29,7 @@ public class SignServlet extends HttpServlet {
                response.sendRedirect(request.getContextPath()+"/page/Login.jsp");
             }else{
                 request.getSession().setAttribute("username",user.getuName());
+                request.getSession().setAttribute("password",user.getuPassword());
 
                 response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
             }

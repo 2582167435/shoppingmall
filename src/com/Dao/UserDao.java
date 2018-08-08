@@ -14,6 +14,12 @@ public class UserDao {
         connection = DB.getConnection();
     }
 
+    /**
+     * 从数据库获取信息
+     * @param uName 姓名
+     * @param uPassword 密码
+     * @return User对象
+     */
     public User getUser(String uName,String uPassword) {
         String sql = "SELECT * FROM users WHERE u_name='"+uName+"' AND u_password = '"+uPassword+"'";
        //PreparedStatement preparedStatement = null;
@@ -58,6 +64,15 @@ public class UserDao {
         return user;
     }
 
+    /**
+     * 从注册页面获取注册信息
+     * @param uName 用户名
+     * @param uPassword 用户密码
+     * @param uiTelephone 电话
+     * @param uiAddress 地址
+     * @param uiEmail   电子邮箱
+     * @return
+     */
     public boolean register(String uName,String uPassword,String uiTelephone,String uiAddress,String uiEmail){
         String sql = "INSERT INTO users(u_id,t_id,u_name,u_password,ui_id)" +
                 "VALUE (?,?,?,?,?)";
@@ -89,14 +104,15 @@ public class UserDao {
     }
 
     public boolean updateUser(User user,String uName){
-        String sql = "ALTER  users SET u_password = ?WHERE u_name = ?";
+        String sql = "UPDATE  users SET u_password = ?WHERE u_name = ?";
         PreparedStatement preparedStatement = null;
+        Boolean flag = false;
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,user.getuPassword());
             preparedStatement.setString(2,uName);
             preparedStatement.executeUpdate();
-            return true;
+            flag = true;
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -107,7 +123,7 @@ public class UserDao {
                 e.printStackTrace();
             }
         }
-        return false;
+        return flag;
     }
 
 
