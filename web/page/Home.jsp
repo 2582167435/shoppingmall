@@ -15,7 +15,7 @@
 <body>
 <a href="Login.jsp" class="login">登陆</a>
 
-<a href="Login.jsp" class="login">注册</a>
+<a href="SignUP.jsp" class="login">注册</a>
 
 </body>
 </html>
