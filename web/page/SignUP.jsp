@@ -9,18 +9,23 @@
 <html>
 <head>
     <title>注册</title>
+    <script type="text/javascript" src="../javascript/LoginformCheck.js"></script>
 </head>
 <body>
 
-<form action="/SignUPServlet" method="post">
-    <table width="260"  align="center">
+<form action="/SignUPServlet" method="post" onsubmit="return checkAll()">
+    <table width="500"  align="center">
         <tr>
             <td style="text-align: right"><font color="red" >*</font> 用户名：</td>
-            <td><input type="text" name="username"></td>
+            <td><input type="text" name="username" id="username" onblur="checkName()"/><span id="name_msg">数字字母下划线，长度6-10</td>
         </tr>
         <tr>
-            <td style="text-align: right"><font color="red" >*</font>密码：</td>
-            <td><input type="password" name="password"></td>
+            <td style="text-align: right"><font color="red"/> *</font>密码：</td>
+            <td><input type="password" name="password"  id="pwd1" onblur="checkPwd()"/><span id="pwd1_msg">长度6-10</span></td>
+        </tr>
+        <tr>
+            <td><font color="red"/> *</font>确认密码</td>
+            <td><input type="password" name="pwd2" id="pwd2" onblur="checkPwd2()"/><span id="pwd2_msg">长度6-10</span></td>
         </tr>
         <tr>
             <td style="text-align: right"><font color="red" >*</font>电话：</td>

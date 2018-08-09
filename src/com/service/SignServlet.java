@@ -8,12 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "SignServlet",urlPatterns = "/SignServlet")
 public class SignServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession httpSession = request.getSession();
         request.setCharacterEncoding("UTF-8");
         String signType = request.getParameter("sign");
         UserDao userDao = new UserDao();
@@ -25,11 +26,11 @@ public class SignServlet extends HttpServlet {
             User user = userDao.getUser(uName,uPassword);
 
             if (user == null){
-               request.getSession().setAttribute("LoginError","用户名或密码错误");
+                httpSession.setAttribute("LoginError","用户名或密码错误");
                response.sendRedirect(request.getContextPath()+"/page/Login.jsp");
             }else{
-                request.getSession().setAttribute("username",user.getuName());
-                request.getSession().setAttribute("password",user.getuPassword());
+                httpSession.setAttribute("userName",user.getuName());
+                httpSession.setAttribute("password",user.getuPassword());
 
                 response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
             }
