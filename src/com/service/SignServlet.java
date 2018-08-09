@@ -19,7 +19,7 @@ public class SignServlet extends HttpServlet {
         String signType = request.getParameter("sign");
         UserDao userDao = new UserDao();
 
-        if("登陆".equals(signType)){
+        if("登录".equals(signType)){
 
             String uName = request.getParameter("username");
             String uPassword = request.getParameter("password");
@@ -32,7 +32,12 @@ public class SignServlet extends HttpServlet {
                 httpSession.setAttribute("userName",user.getuName());
                 httpSession.setAttribute("password",user.getuPassword());
 
-                response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
+                if (new UserDao().checkMaster(user.getuName())){
+                    System.out.println("1");
+                    response.sendRedirect(request.getContextPath()+"/page/Master.jsp");
+                }else{
+                    response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
+                }
             }
 
         }else if ("注册".equals(signType)){

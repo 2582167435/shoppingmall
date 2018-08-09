@@ -1,6 +1,7 @@
 package com.com.bean;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Entry {
     private int eID;                        //入库单编号

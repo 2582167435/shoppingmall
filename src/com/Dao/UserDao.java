@@ -1,6 +1,7 @@
 package com.Dao;
 
 import com.com.bean.User;
+import com.com.bean.UserInfo;
 import com.db.DB;
 
 import java.sql.*;
@@ -8,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserDao {
+
     private static Connection connection = null;
 
     static {
@@ -18,7 +20,7 @@ public class UserDao {
      * 从数据库获取信息
      * @param uName 姓名
      * @param uPassword 密码
-     * @return User对象
+     * @return User
      */
     public User getUser(String uName,String uPassword) {
         String sql = "SELECT * FROM users WHERE u_name='"+uName+"' AND u_password = '"+uPassword+"'";
@@ -63,6 +65,46 @@ public class UserDao {
         }
         return user;
     }
+    public User getUser(String uName){
+        String sql = "SELECT * FROM users WHERE u_name='"+uName+"'" ;
+        //PreparedStatement preparedStatement = null;
+        Statement statement = null;
+
+        ResultSet resultSet = null;
+        User user = null;
+        try {
+
+            statement = connection.createStatement();
+
+            resultSet = statement.executeQuery(sql);
+
+
+            while(resultSet.next()){
+                user = new User();
+                user.setuID(resultSet.getInt(1));
+                user.settID(resultSet.getInt(2));
+                user.setuName(resultSet.getString(3));
+                user.setuPassword(resultSet.getString(4));
+                user.setUiID(resultSet.getInt(5));
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (null != resultSet) {
+                try {
+                    resultSet.close();
+                    if (null != statement) {
+                        statement.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return user;
+    }
 
     /**
      * 从注册页面获取注册信息
@@ -71,9 +113,9 @@ public class UserDao {
      * @param uiTelephone 电话
      * @param uiAddress 地址
      * @param uiEmail   电子邮箱
-     * @return
+     * @return Boolean
      */
-    public boolean register(String uName,String uPassword,String uiTelephone,String uiAddress,String uiEmail){
+    public boolean Insert(String uName,String uPassword,String uiTelephone,String uiAddress,String uiEmail){
         String sql = "INSERT INTO users(u_id,t_id,u_name,u_password,ui_id)" +
                 "VALUE (?,?,?,?,?)";
 
@@ -83,18 +125,22 @@ public class UserDao {
         System.out.println(Integer.valueOf(format.format(date)));
         int u_id = Integer.valueOf(format.format(date));
 
-        int t_id = 1;
-        int ui_id = 10002;
+        int t_id = 1;                                       //指定注册类型为用户
+
+        UserInfo userInfo = new UserInfoDao().InserUserInfo(uName,uiTelephone,uiAddress,uiEmail);
 
         if (!checkExist(uName)) {
             try {
                 preparedStatement = connection.prepareStatement(sql);
+
                 preparedStatement.setInt(1,u_id);
                 preparedStatement.setInt(2,t_id);
                 preparedStatement.setString(3,uName);
                 preparedStatement.setString(4,uPassword);
-                preparedStatement.setInt(5,ui_id);
+                preparedStatement.setInt(5,userInfo.getUiid());
+
                 preparedStatement.executeUpdate();
+
                 return true;
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -102,6 +148,14 @@ public class UserDao {
         }
         return false;
     }
+
+
+    /**
+     * 修改用户密码
+     * @param user
+     * @param uName
+     * @return Boolean
+     */
 
     public boolean updateUser(User user,String uName){
         String sql = "UPDATE  users SET u_password = ?WHERE u_name = ?";
@@ -126,7 +180,11 @@ public class UserDao {
         return flag;
     }
 
-
+    /**
+     * 检测数据库中是否有该条记录
+     * @param uName
+     * @return Boolean
+     */
     public boolean checkExist(String uName){
         String sql = "SELECT * FROM USERS WHERE u_name = ?";
         PreparedStatement preparedStatement = null;
@@ -154,6 +212,22 @@ public class UserDao {
             }
             return false;
         }
+
+    /**
+     * 检测管理员权限
+     * @param uName
+     * @return Boolean
+     */
+    public boolean checkMaster(String uName){
+        ;
+        boolean flag = false;
+        if(new UserTypeDao().getUserType(getUser(uName).gettID()).gettID() == 0){
+            flag = true;
+        }else {
+            flag = false;
+        }
+        return flag;
+    }
 
 
 }

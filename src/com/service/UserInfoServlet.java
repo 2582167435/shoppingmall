@@ -23,6 +23,7 @@ public class UserInfoServlet extends HttpServlet {
         User user = new UserDao().getUser(userName,password);
         UserInfo userInfo = new UserInfoDao().getUserInfo(userName);
 
+        System.out.println(userInfo.getUiName());
         request.setAttribute("user",user);
         request.setAttribute("userInfo",userInfo);
 
