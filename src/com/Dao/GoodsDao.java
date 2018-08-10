@@ -70,7 +70,7 @@ public class GoodsDao {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        Goods good = null;
+        List<Goods> goodsList = new ArrayList<Goods>();
 
         try {
 
@@ -79,16 +79,25 @@ public class GoodsDao {
             statement.setString(1,selectString);
             statement.setString(2,selectString);
 
-            statement.executeQuery();
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()){
-                good = new Goods();
+                Goods good = new Goods();
+                good.setgID(resultSet.getInt("g_id"));
+                good.setgCode(resultSet.getString("g_code"));
+                good.setgName(resultSet.getString("g_name"));
+                good.setgCount(resultSet.getInt("g_count"));
+                good.setgPrice(resultSet.getFloat("g_price"));
+                good.setgAddress(resultSet.getString("g_address"));
+                good.setgType(resultSet.getString("g_type"));
+
+                goodsList.add(good);
 
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return goodsList;
     }
 }

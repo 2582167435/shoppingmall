@@ -37,7 +37,7 @@
             </ul>
         </div>
         <div id="find">
-            <form method="post" action="/Good">
+            <form method="post" action="/GoodsServlet">
                 <input type="text" name="find" width="100">
                 <input type="submit" value="搜索" >
             </form>

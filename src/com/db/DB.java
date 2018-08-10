@@ -12,19 +12,25 @@ public class DB {
 
     private  static Connection conn = null;
     private DB(){
-        try {
+      /*  try {
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL,USER,PASSWORD);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static Connection getConnection(){
-        if(null == conn){
+        /*if(null == conn){
             new DB();
+        }
+        return conn;*/
+        try {
+            conn = C3p0Utils.getConnection();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return conn;
     }

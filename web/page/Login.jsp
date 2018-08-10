@@ -32,10 +32,11 @@
         <input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'Password',iconCls:'icon-lock',iconWidth:38" type="password" name="password">
     </div>
      <div style="margin-bottom:20px" align="center">
-         <input type="submit" style="padding:5px 0px;width:60%;" value="注册" name="sign">
+         <input type="submit" style="padding:5px 0px;width:60%;" value="登录" name="sign">
+
      </div>
         <div style="margin-bottom:20px" align="center">
-            <input type="submit" style="padding:5px 0px;width:60%;" value="登录" name="sign">
+            <input type="submit" style="padding:5px 0px;width:60%;" value="注册" name="sign">
         </div>
     </div>
 </div>
