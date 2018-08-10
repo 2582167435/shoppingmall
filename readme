@@ -1,0 +1,7 @@
+可改进：数据库中添加类型表，动态生成类别表，将goods对象中的type变更为List以至于一个商品可以有多中类别
+goodType表
+TypeID TypeName
+
+
+goods表
+g_id g_code g_name g_count g_price t_id g_address isDelete

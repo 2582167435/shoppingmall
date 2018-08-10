@@ -37,7 +37,7 @@
             </ul>
         </div>
         <div id="find">
-            <form method="post" action="find.jsp">
+            <form method="post" action="/Good">
                 <input type="text" name="find" width="100">
                 <input type="submit" value="搜索" >
             </form>
@@ -48,45 +48,38 @@
         <div id="sidebar">
             <dl>
                 <dt>男装</dt>
-                <dd class="current"><a href="#">CSS 简介</a></dd>
-                <dd><a href="#">CSS 基础语法</a></dd>
-                <dd><a href="#">CSS 高级语法</a></dd>
-                <dd><a href="#">CSS 派生选择器</a></dd>
-                <dd><a href="#">CSS id 选择器</a></dd>
-                <dd><a href="#">CSS 类选择器</a></dd>
-                <dd><a href="#">CSS 属性选择器</a></dd>
-                <dd><a href="#">CSS 创建</a></dd>
+                <dd><a href="#">上衣</a></dd>
+                <dd><a href="#">裤子</a></dd>
+                <dd><a href="#">鞋</a></dd>
+                <dd><a href="#">更多男装</a></dd>
             </dl>
             <dl>
                 <dt>女装</dt>
-                <dd><a href="#">CSS 背景</a></dd>
-                <dd><a href="#">CSS 文本</a></dd>
-                <dd><a href="#">CSS 字体</a></dd>
-                <dd><a href="#">CSS 链接</a></dd>
-                <dd><a href="#">CSS 列表</a></dd>
-                <dd><a href="#">CSS 表格</a></dd>
-                <dd><a href="#">CSS 轮廓</a></dd>
+                <dd><a href="#">上衣</a></dd>
+                <dd><a href="#">裤子</a></dd>
+                <dd><a href="#">鞋</a></dd>
+                <dd><a href="#">更多女装</a></dd>
             </dl>
             <dl>
-                <dt>鞋服</dt>
-                <dd><a href="#">CSS 盒子模型概述</a></dd>
-                <dd><a href="#">CSS 内边距</a></dd>
-                <dd><a href="#">CSS 边框</a></dd>
-                <dd><a href="#">CSS 外边距</a></dd>
-                <dd><a href="#">CSS 外边距合并</a></dd>
+                <dt>鞋</dt>
+                <dd><a href="#">运动鞋</a></dd>
+                <dd><a href="#">皮鞋</a></dd>
+                <dd><a href="#">高跟鞋</a></dd>
+                <dd><a href="#">篮球鞋</a></dd>
+                <dd><a href="#">其他鞋类</a></dd>
             </dl>
             <dl>
                 <dt>其他</dt>
-                <dd><a href="#">CSS 盒子模型概述</a></dd>
-                <dd><a href="#">CSS 内边距</a></dd>
-                <dd><a href="#">CSS 边框</a></dd>
-                <dd><a href="#">CSS 外边距</a></dd>
-                <dd><a href="#">CSS 外边距合并</a></dd>
+                <dd><a href="#">袜子</a></dd>
+                <dd><a href="#">包</a></dd>
+                <dd><a href="#">头带</a></dd>
+                <dd><a href="#">户外用品</a></dd>
+                <dd><a href="#">水壶</a></dd>
             </dl>
 
 
         </div>
-        <div id="content">
+        <div id="content" >
             <h1>CSS 简介</h1>
             <div class="pageto"><a href="#">上一章</a> <a href="#">下一章</a></div>
             <h3>你应该知道这些知识</h3>

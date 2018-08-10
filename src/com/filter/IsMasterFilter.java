@@ -1,6 +1,7 @@
 package com.filter;
 
 import com.Dao.UserDao;
+import com.com.bean.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -15,9 +16,8 @@ public class IsMasterFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        super.doFilter(request, response, chain);
 
-        if (new UserDao().checkMaster( (String)request.getSession().getAttribute("username"))){
+        if (new UserDao().checkMaster( (String)request.getSession().getAttribute("userName"))){
             chain.doFilter(request,response);
         }else {
             response.sendRedirect("/page/Home.jsp");

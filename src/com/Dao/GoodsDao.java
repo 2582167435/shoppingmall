@@ -59,4 +59,36 @@ public class GoodsDao {
         }
         return list;
     }
+
+    /**
+     *      搜索结果
+     * @param selectString
+     * @return
+     */
+    public List<Goods> getGood(String selectString){
+        String sql = "SELECT * FROM goods WHERE g_name = ? OR g_type = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        Goods good = null;
+
+        try {
+
+            statement = connection.prepareStatement(sql);
+
+            statement.setString(1,selectString);
+            statement.setString(2,selectString);
+
+            statement.executeQuery();
+
+            while (resultSet.next()){
+                good = new Goods();
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

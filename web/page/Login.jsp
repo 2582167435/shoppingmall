@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/esayUI/themes/icon.css" type="text/css"/>
 </head>
 <body>
-<h2>Custom TextBox</h2>
+
 <p></p>
 <div style="margin:20px 0;"></div>
 <div align="center">
 <form action="/SignServlet" method="post">
-    <div class="easyui-panel" title="Login to system" style="width:100%;max-width:400px;padding:30px 60px;">
+    <div class="easyui-panel" title="欢迎登陆淘淘网" style="width:100%;max-width:400px;padding:30px 60px;">
     <div style="margin-bottom:10px">
         <input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'Username',iconCls:'icon-man',iconWidth:38" type="text" name="username">
     </div>
