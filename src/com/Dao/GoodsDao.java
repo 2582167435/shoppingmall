@@ -65,7 +65,7 @@ public class GoodsDao {
      * @param selectString
      * @return
      */
-    public List<Goods> getGood(String selectString){
+    /*public List<Goods> getGood(String selectString){
         String sql = "SELECT * FROM goods WHERE g_name = ? OR g_type = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -99,5 +99,5 @@ public class GoodsDao {
             e.printStackTrace();
         }
         return goodsList;
-    }
+    }*/
 }

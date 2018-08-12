@@ -15,7 +15,7 @@ import java.util.List;
 public class GoodsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String str = request.getParameter("find");
-        List<Goods> list =  new GoodsDao().getGood(str);
+        List<Goods> list =  new GoodsDao().getGoodList(str);
         request.getSession().setAttribute("Goods",list);
         response.sendRedirect("/page/Goods.jsp");
     }

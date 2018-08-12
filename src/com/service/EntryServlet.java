@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "EntryServlet")
+@WebServlet(name = "EntryServlet",urlPatterns = "/EntryServlet")
 public class EntryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getAttribute("entry")==null) {
@@ -34,7 +34,10 @@ public class EntryServlet extends HttpServlet {
             request.getSession().setAttribute("entry",entry);
             request.getRequestDispatcher("").forward(request,response);
         }else {
-            new EntryDao().insertEntry((Entry) request.getSession().getAttribute("entry"));
+            HttpSession session = request.getSession();
+            session.setAttribute("entry",request.getAttribute("entry"));
+            new EntryDao().insertEntry((Entry)session.getAttribute("entry"));
+            request.getRequestDispatcher("").forward(request,response);
         }
     }
 }
