@@ -2,12 +2,12 @@
   <artifact type="exploded-war" name="shoppingmall:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="shoppingmall/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="shoppingmall" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="shoppingmall/web/Web" />
     </root>
   </artifact>
 </component>

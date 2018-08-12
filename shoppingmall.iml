@@ -19,9 +19,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.10" level="application_server_libraries" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.7-bin" level="project" />
-    <orderEntry type="library" name="jstl" level="project" />
-    <orderEntry type="library" name="c3p0-0.9.5.21" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
   </component>
 </module>

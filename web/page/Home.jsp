@@ -25,7 +25,7 @@
         </c:if>
         <c:if test="${empty sessionScope.userName}">
             <a href="Login.jsp" class="login" target="a">登录</a>
-            <a href="SignUP.jsp" class="login">注册</a>
+            <a href="Home.jsp" class="login">注册</a>
         </c:if>
         <div class="logo">淘淘网购物商城</div>
         <div class="nav">
