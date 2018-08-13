@@ -168,6 +168,8 @@ public class EntryDao {
                         list.add(entry);
                     }while (resultSet.next());
                     break;
+
+                    
                 }
             }
         }catch (SQLException e) {
