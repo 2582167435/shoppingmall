@@ -10,43 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="221f7eaa-1a90-4072-bd55-87fb0df98b15" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/filter/OutFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/service/AlterEntryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/service/UpdateEntryServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/page/Out.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/EntryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/EntryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/GoodsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/SelectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/SelectDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/filter/IsMasterFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/filter/IsMasterFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/EntryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/EntryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/GoodsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/GoodsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/SelectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/SelectServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/SignServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/WEB-INF/classes/com/service/SignServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/page/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/page/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/page/Master.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shoppingmall_war_exploded/page/Master.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/EntryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/EntryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/GoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/GoodsDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/SelectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/SelectDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/filter/IsMasterFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/filter/IsMasterFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/service/EntryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/service/EntryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/service/GoodsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/service/GoodsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/service/SelectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/service/SelectServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shoppingmall/com/service/SignServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shoppingmall/com/service/SignServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Dao/EntryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dao/EntryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Dao/OutDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dao/OutDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Dao/SelectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dao/SelectDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/filter/IsMasterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/filter/IsMasterFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/EntryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/service/EntryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/OutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/service/OutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/SelectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/service/SelectServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/SignServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/service/SignServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/page/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/page/Master.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/Master.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +100,8 @@
       <file leaf-file-name="EntryDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Dao/EntryDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="161" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="381">
+              <caret line="171" selection-start-line="171" selection-end-line="171" />
             </state>
           </provider>
         </entry>
@@ -191,9 +155,9 @@
         <option value="$PROJECT_DIR$/src/com/filter/IsMasterFilter.java" />
         <option value="$PROJECT_DIR$/src/com/service/AlterEntryServlet.java" />
         <option value="$PROJECT_DIR$/src/com/service/UpdateEntryServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/Dao/EntryDao.java" />
         <option value="$PROJECT_DIR$/src/com/service/SelectServlet.java" />
         <option value="$PROJECT_DIR$/web/page/Master.jsp" />
+        <option value="$PROJECT_DIR$/src/com/Dao/EntryDao.java" />
       </list>
     </option>
   </component>
@@ -213,7 +177,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="301" />
     <option name="y" value="34" />
     <option name="width" value="1400" />
@@ -462,7 +426,7 @@
       <workItem from="1534061400854" duration="12504000" />
       <workItem from="1534127342778" duration="5392000" />
       <workItem from="1534133082892" duration="2062000" />
-      <workItem from="1534140896326" duration="15066000" />
+      <workItem from="1534140896326" duration="15713000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1534063019060</created>
@@ -471,14 +435,28 @@
       <option name="project" value="LOCAL" />
       <updated>1534063019060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完善入库界面与数据库交互">
+      <created>1534156191902</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1534156191902</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完善入库界面并与数据库交互">
+      <created>1534157155817</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534157155818</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35024000" />
+    <option name="totallyTimeSpent" value="35671000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -500,7 +478,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38191488" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38191488" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49569708" visible="true" weight="0.18020834" />
       <window_info auto_hide="true" id="Web" order="2" sideWeight="0.5043029" side_tool="true" weight="0.18020834" />
@@ -523,7 +501,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
     <MESSAGE value="完善入库界面与数据库交互" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善入库界面与数据库交互" />
+    <MESSAGE value="完善入库界面并与数据库交互" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善入库界面并与数据库交互" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/page/Out.jsp">
@@ -887,8 +866,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Dao/EntryDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        <state relative-caret-position="381">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
         </state>
       </provider>
     </entry>

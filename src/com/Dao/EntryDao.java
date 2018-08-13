@@ -169,7 +169,7 @@ public class EntryDao {
                     }while (resultSet.next());
                     break;
 
-                    
+
                 }
             }
         }catch (SQLException e) {
