@@ -57,7 +57,33 @@ public class EntryDao {
         return b;
     }
 
-    public void updateEntry(int eID){
+    public void alterEntry(Entry entry){
+        PreparedStatement preparedStatement = null;
+        Boolean b = false;
+        String sql = "UPDATE entry SET g_id=? ,s_id=?,entry_manager=?,e_count=?,e_way=? WHERE e_id = ?";
+
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,entry.getgID());
+            preparedStatement.setInt(2,entry.getsID());
+            preparedStatement.setString(3,entry.getEntryManager());
+            preparedStatement.setInt(4,entry.geteCount());
+            preparedStatement.setString(5,entry.geteWay());
+            preparedStatement.setInt(6,entry.geteID());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (null != preparedStatement){
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+
+                }
+            }
+        }
+    }
+    public void updateStatusEntry(int eID){
         PreparedStatement preparedStatement = null;
         Boolean b = false;
         String sql = "UPDATE entry SET isVerify=1 , ispass=1,isdeal=1 WHERE e_id = "+eID;
@@ -86,7 +112,7 @@ public class EntryDao {
         List<Entry> list = new ArrayList<>();
         ResultSet resultSet = null;
 
-        resultSet = new SelectDao().getSelectResultSet("0","entry","usdeal");
+        resultSet = new SelectDao().getSelectResultSet("Boolean","true","entry","isdeal");
 
         try {
             while (resultSet.next()){
@@ -107,6 +133,47 @@ public class EntryDao {
             e.printStackTrace();
         }finally {
             if (null != resultSet){
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return list;
+    }
+
+    public List<Entry> getEntrys(String selectName){
+        List<Entry> list = new ArrayList<>();
+        SelectDao selectDao = new SelectDao();
+        ResultSet resultSet = null;
+        String[] fields = {"e_id","g_id","s_id"};
+
+        try {
+            for (String field: fields) {
+                resultSet = selectDao.getSelectResultSet("String",selectName,"entry",field);
+                if (resultSet.next()){
+                    do {
+                        Entry entry = new Entry();
+                        entry.seteID(resultSet.getInt(1));
+                        entry.setgID(resultSet.getInt(2));
+                        entry.setsID(resultSet.getInt(3));
+                        entry.setEntryManager(resultSet.getString(4));
+                        entry.setEntryDate(resultSet.getDate(5));
+                        entry.seteCount(resultSet.getInt(6));
+                        entry.seteWay(resultSet.getString(7));
+                        entry.setVerify(resultSet.getBoolean(8));
+                        entry.setPass(resultSet.getBoolean(9));
+                        entry.setDeal(resultSet.getBoolean(10));
+                        list.add(entry);
+                    }while (resultSet.next());
+                    break;
+                }
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if(null != resultSet){
                 try {
                     resultSet.close();
                 } catch (SQLException e) {
