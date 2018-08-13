@@ -30,7 +30,7 @@ public class GoodsDao {
 
         try {
             for (String field: fields) {
-                resultSet = selectDao.getSelectResultSet(selectString,"goods",field);
+                resultSet = selectDao.getSelectResultSet("String",selectString,"goods",field);
                 if (resultSet.next()){
                     do {
                         Goods goods = new Goods();

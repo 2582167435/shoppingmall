@@ -33,8 +33,7 @@ public class SignServlet extends HttpServlet {
                 httpSession.setAttribute("password",user.getuPassword());
 
                 if (new UserDao().checkMaster(user.getuName())){
-                    System.out.println("1");
-                    response.sendRedirect(request.getContextPath()+"/page/Master.jsp");
+                    response.sendRedirect(request.getContextPath()+"/page/Master.jsp?index=0");
                 }else{
                     response.sendRedirect(request.getContextPath()+"/page/Home.jsp");
                 }

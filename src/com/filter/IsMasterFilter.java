@@ -1,5 +1,6 @@
 package com.filter;
 
+import com.Dao.EntryDao;
 import com.Dao.UserDao;
 import com.com.bean.User;
 
@@ -18,9 +19,17 @@ public class IsMasterFilter extends HttpFilter {
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
         if (new UserDao().checkMaster( (String)request.getSession().getAttribute("userName"))){
+            if (request.getSession().getAttribute("masterindex")==null)
+            {
+                request.getSession().setAttribute("masterindex",request.getParameter("index"));
+            }
+            if (request.getSession().getAttribute("entrylist")==null){
+                request.getSession().setAttribute("entrylist",new EntryDao().getEntry());
+            }
             chain.doFilter(request,response);
         }else {
             response.sendRedirect("/page/Home.jsp");
         }
     }
+
 }

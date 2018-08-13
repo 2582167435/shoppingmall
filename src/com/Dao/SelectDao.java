@@ -24,12 +24,20 @@ public class SelectDao {
      * @param fieldName 字段名
      * @return ResultSet
      */
-    public ResultSet getSelectResultSet(String selectString,String tableName,String fieldName){
+    public ResultSet getSelectResultSet(String selecttype,String selectString,String tableName,String fieldName){
         String sql = "SELECT * FROM " + tableName + " WHERE "+ fieldName + " = ?";
         ResultSet resultSet = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,selectString);
+            if (selecttype.equals("String")){
+                preparedStatement.setString(1,selectString);
+            }else if(selecttype.equals("Int")){
+                preparedStatement.setInt(1,Integer.valueOf(selectString));
+            }else if (selecttype.equals("Boolean")){
+                System.out.println(Boolean.valueOf(selectString));
+                preparedStatement.setBoolean(1,Boolean.valueOf(selectString));
+            }
+
             resultSet = preparedStatement.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();

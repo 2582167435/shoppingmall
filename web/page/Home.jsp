@@ -80,17 +80,11 @@
 
         </div>
         <div id="content" >
-            <h1>CSS 简介</h1>
-            <div class="pageto"><a href="#">上一章</a> <a href="#">下一章</a></div>
-            <h3>你应该知道这些知识</h3>
-            <p>在继续之前，你应该有一个以下基本认识：</p>
-            <p>&middot; HTML / XHTML</p>
-            <p class="learn">如果您希望首先学习这些项目，我们的<a href="#">主页</a>上可以找到教程。</p>
-            <div class="disline"></div>
-            <h3>什么是CSS？</h3>
-            <p>CSS即级联样式表。
-
-            <div id="footer">&copy;版权所有</div>
-        </div></body>
+            <c:forEach var="i" begin="0" items="${sessionScope.outlist}">
+                <a href="/OutServlet?index=${i}">链接${i}</a>
+                <br>
+            </c:forEach>
+        </div>
+</body>
 
 </html>

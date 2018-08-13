@@ -32,24 +32,24 @@ public class OutDao {
 
         ResultSet resultSet = null;
 
-        resultSet = new SelectDao().getSelectResultSet(String.valueOf(flag),"out",flagName);
+        resultSet = new SelectDao().getSelectResultSet("Boolean",String.valueOf(flag),"o_ut",flagName);
 
         try {
             while (resultSet.next()){
                 Out out = new Out();
-
                 out.setoID(resultSet.getInt(1));
                 out.setoCode(resultSet.getString(2));
                 out.setgID(resultSet.getInt(3));
-                out.setuID(resultSet.getInt(5));
-                out.setOutDate(resultSet.getDate(6));
-                out.setOutManager(resultSet.getString(7));
-                out.setoWay(resultSet.getString(8));
-                out.setoCount(resultSet.getInt(9));
-                out.setVerif(resultSet.getBoolean(10));
-                out.setPass(resultSet.getBoolean(11));
-                out.setDeal(resultSet.getBoolean(12));
+                out.setuID(resultSet.getInt(4));
+                out.setOutDate(resultSet.getDate(5));
+                out.setOutManager(resultSet.getString(6));
+                out.setoWay(resultSet.getString(7));
+                out.setoCount(resultSet.getInt(8));
+                out.setVerif(resultSet.getBoolean(9));
+                out.setPass(resultSet.getBoolean(10));
+                out.setDeal(resultSet.getBoolean(11));
                 list.add(out);
+                System.out.println(list.size());
             }
         } catch (SQLException e) {
             e.printStackTrace();

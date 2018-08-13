@@ -221,7 +221,7 @@ public class UserDao {
     public boolean checkMaster(String uName){
         ;
         boolean flag = false;
-        if(new UserTypeDao().getUserType(getUser(uName).gettID()).gettID() == 0){
+        if(new UserTypeDao().getUserType(getUser(uName).gettID()).gettID() == 1){
             flag = true;
         }else {
             flag = false;

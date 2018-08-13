@@ -16,28 +16,33 @@ import java.util.Date;
 @WebServlet(name = "EntryServlet",urlPatterns = "/EntryServlet")
 public class EntryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getAttribute("entry")==null) {
+        request.setCharacterEncoding("UTF-8");
+        if (request.getSession().getAttribute("entry")==null) {
             Entry entry = new Entry();
             Date date = new Date();
-            SimpleDateFormat format = new SimpleDateFormat("yyMMddHHmmssZ");
-
-            entry.seteID(Integer.valueOf(format.format(date)));
-            entry.setgID(Integer.valueOf(request.getParameter("")));
-            entry.setsID(Integer.valueOf(request.getParameter("")));
-            entry.setEntryManager(request.getParameter(""));
+            SimpleDateFormat format1 = new SimpleDateFormat("ddHHmmss");
+            SimpleDateFormat format2 = new SimpleDateFormat("yymmddHHmmss");
+            entry.seteID(Integer.valueOf(format1.format(date)));
+            entry.setgID(Integer.valueOf(request.getParameter("gid")));
+            entry.setsID(Integer.valueOf(request.getParameter("sid")));
+            entry.setEntryManager(request.getParameter("entrymanager"));
             entry.setEntryDate(new java.sql.Date(System.currentTimeMillis()));
-            entry.seteCount(Integer.valueOf(request.getParameter("")));
-            entry.seteWay(request.getParameter(""));
+            entry.seteCount(Integer.valueOf(request.getParameter("count")));
+            entry.seteWay(request.getParameter("way"));
             entry.setDeal(true);
             entry.setVerify(true);
             entry.setPass(false);
             request.getSession().setAttribute("entry",entry);
-            request.getRequestDispatcher("").forward(request,response);
+            response.sendRedirect(request.getContextPath()+"/page/Master.jsp?index=1&flag=0");
         }else {
-            HttpSession session = request.getSession();
-            session.setAttribute("entry",request.getAttribute("entry"));
-            new EntryDao().insertEntry((Entry)session.getAttribute("entry"));
-            request.getRequestDispatcher("").forward(request,response);
+            Entry entry = (Entry)request.getSession().getAttribute("entry");
+            entry.setgID(Integer.valueOf(request.getParameter("gid")));
+            entry.setsID(Integer.valueOf(request.getParameter("sid")));
+            entry.setEntryManager(request.getParameter("entrymanager"));
+            entry.seteCount(Integer.valueOf(request.getParameter("count")));
+            entry.seteWay(request.getParameter("way"));
+            new EntryDao().insertEntry(entry);
+            response.sendRedirect(request.getContextPath()+"/page/Master.jsp?index=1&flag=1");
         }
     }
 }
